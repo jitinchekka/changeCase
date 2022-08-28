@@ -79,7 +79,15 @@ chrome.runtime.onInstalled.addListener(function () {
         function (selection) {
           // Convert the selection to uppercase
           var text = selection[0];
-          var sentenceCase = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+          // Split the text into sentences by splitting on periods followed by a space
+          var sentences = text.split(/\.\s/);
+          // Loop through the sentences and capitalize the first letter of each sentence
+          for (var i = 0; i < sentences.length; i++) {
+            sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1).toLowerCase();
+          }
+          // Join the sentences back together with a period
+          var sentenceCase = sentences.join(". ");
+          // var sentenceCase = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
           // Replace the selection with the uppercase text
           chrome.tabs.executeScript(
             {
