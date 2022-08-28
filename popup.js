@@ -55,13 +55,4 @@ document.getElementById("uppercase").addEventListener("click", function () {
 //   }
 // }),
 // chrome tabs execute script log the selected text on console on ctrl+shift+l
-chrome.tabs.executeScript(
-  {
-    code: "window.getSelection().toString();",
-  },
-  function (selection) {
-    console.log(selection[0]);
-  }
-);
 
-console.log("popup.js");

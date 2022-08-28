@@ -10,6 +10,14 @@
 	"background":{
 		"scripts":["background.js"]
 	},
+	"commands":{
+		"changecase":{
+			"suggested_key":{
+				"default":"Ctrl+Shift+L"
+			},
+			"description":"Changes the case of the selected text."
+		}
+	},
 	"permissions":[
 		"activeTab",
 		"tabs",
