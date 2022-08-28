@@ -5,6 +5,7 @@
 	"author":"Team IIIT",
 	"manifest_version":2,
 	"browser_action":{
+		"default_icon": "logo.png",
 		"default_popup":"popup.html"
 	},
 	"background":{

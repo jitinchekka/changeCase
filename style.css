@@ -8,3 +8,24 @@
   display: inline-block;
   font-size: 16px;
 } */
+
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+body {
+  width: 300px;
+  height: 300px;
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+}
+.image {
+  text-align: center;
+}
+
+#img1 {
+  width: 100px;
+  height: 100px;
+}
+#img2{
+  width: 300px;
+  height: 200px;
+}
