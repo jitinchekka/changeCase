@@ -33,4 +33,38 @@ chrome.runtime.onInstalled.addListener(function () {
     },
     id: "uppercase",
   });
+  // add another context menu item lowercase
+  chrome.contextMenus.create({
+    title: "Lowercase",
+    contexts: ["selection"],
+    onclick: function (info, tab) {
+      chrome.tabs.executeScript(
+        {
+          code: "window.getSelection().toString()",
+        },
+        function (selection) {
+          // Convert the selection to uppercase
+          var text = selection[0];
+          var lowercase = text.toLowerCase();
+          // Replace the selection with the uppercase text
+          chrome.tabs.executeScript(
+            {
+              code: "document.getSelection().toString()",
+            },
+            function (selection) {
+              chrome.tabs.executeScript(
+                {
+                  code: "document.execCommand('insertText', false, '" + lowercase + "')",
+                },
+                function (selection) {
+                  console.log(selection);
+                }
+              );
+            }
+          );
+        }
+      );
+    },
+    id: "lowercase", 
+  });
 })
