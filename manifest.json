@@ -5,18 +5,17 @@
 	"author":"Team IIIT",
 	"manifest_version":2,
 	"browser_action":{
-		"default_icon":"images/icon.png",
-		"default_popup":"pages/popup.html"
+		"default_popup":"popup.html"
 	},
-	"icons":{
-		"128":"images/icon.png"
+	"background":{
+		"scripts":["background.js"]
 	},
 	"permissions":[
 		"activeTab",
 		"tabs",
-		"storage",
 		"contextMenus",
-		"webRequest",
-		"webRequestBlocking"
+		"notifications",
+        "http://*/",
+        "https://*/"
 	]
 }
